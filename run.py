@@ -1,69 +1,23 @@
 # -*- coding: utf-8 -*-
-import os
-import sys
 import time
-import random
-import warnings
-import re
 
 import numpy as np
 import pandas as pd
 
-from sklearn.model_selection import KFold
-from sklearn.metrics import accuracy_score
-from sklearn.linear_model import Ridge, RidgeCV
-from sklearn.linear_model import ElasticNet, Lasso, BayesianRidge, LassoLarsIC
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier, GradientBoostingRegressor, GradientBoostingClassifier
-from sklearn.ensemble import AdaBoostRegressor, BaggingRegressor, BaggingClassifier
-from sklearn.tree import ExtraTreeRegressor, ExtraTreeClassifier
-from sklearn.kernel_ridge import KernelRidge
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import RobustScaler
-from sklearn.base import BaseEstimator, TransformerMixin, RegressorMixin, clone
-from sklearn.model_selection import KFold, cross_val_score, train_test_split
-from sklearn.metrics import mean_squared_error
-from sklearn.feature_selection import SelectFromModel
-from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import f1_score, roc_auc_score
-
-from sklearn.feature_extraction.text import TfidfVectorizer, TfidfTransformer, HashingVectorizer, CountVectorizer
-from sklearn.decomposition import TruncatedSVD
-from sklearn import preprocessing, pipeline
-
-
-import xgboost as xgb
-import lightgbm as lgb
-from keras.models import Model, load_model, Sequential
-from keras.layers import Input, Add, Dense, Flatten, BatchNormalization, Activation, UpSampling2D, Embedding
-from keras.layers.core import Lambda
-from keras.layers.convolutional import Conv2D, Conv2DTranspose
-from keras.layers.pooling import MaxPooling2D, GlobalAveragePooling2D
-from keras.layers.merge import concatenate
-from keras.callbacks import EarlyStopping, ModelCheckpoint, ReduceLROnPlateau
-from keras import backend as K
-from keras import losses, metrics, optimizers
-from keras.applications import MobileNet
-# from keras.applications.mobilenet import relu6, DepthwiseConv2D
-
-import tensorflow as tf
-import keras
-
 from glob import glob
-
-import simplejson as json
-
 import pickle
 import gensim
 import jieba
-import itertools
 
-from keras.models import Sequential
-from keras.layers import Dense, Dropout, Concatenate, Add, SpatialDropout1D
-from keras.layers import Embedding
-# from keras.layers import LSTM, TimeDistributed, Bidirectional, CuDNNLSTM, CuDNNGRU
+from sklearn.model_selection import KFold
+from keras.models import Model
+from keras.callbacks import ModelCheckpoint
+from keras import losses, metrics, optimizers
+
+from keras.layers import Input, Activation, Embedding
+from keras.layers import Dense, Dropout, Concatenate, SpatialDropout1D
 from keras.layers import LSTM, TimeDistributed, Bidirectional
-
-import keras.backend as K
+# from keras.layers import LSTM, TimeDistributed, Bidirectional, CuDNNLSTM, CuDNNGRU
 
 
 LABELS = ['Normal',
